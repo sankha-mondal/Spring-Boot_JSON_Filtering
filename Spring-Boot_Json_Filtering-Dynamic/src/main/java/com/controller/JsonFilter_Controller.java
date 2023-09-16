@@ -42,5 +42,8 @@ public class JsonFilter_Controller {
 							 new JsonFilter("Vijay", "V@123", "Bangalore"));
 		
 		MappingJacksonValue mappingJacksonValue = new MappingJacksonValue(jf_list);
+
+		SimpleBeanPropertyFilter filter = 
+				SimpleBeanPropertyFilter.filterOutAllExcept("name","location");
 	}
 }
