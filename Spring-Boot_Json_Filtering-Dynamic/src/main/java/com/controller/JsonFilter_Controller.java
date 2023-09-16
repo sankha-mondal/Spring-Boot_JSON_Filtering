@@ -45,5 +45,12 @@ public class JsonFilter_Controller {
 
 		SimpleBeanPropertyFilter filter = 
 				SimpleBeanPropertyFilter.filterOutAllExcept("name","location");
+
+		FilterProvider provider =
+				new SimpleFilterProvider().addFilter("SomeBeanFilter", filter);
+		
+		mappingJacksonValue.setFilters(provider);
+		
+		return mappingJacksonValue;
 	}
 }
